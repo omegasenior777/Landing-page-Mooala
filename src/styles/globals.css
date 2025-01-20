@@ -1,0 +1,507 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ffffff;
+  }
+}
+
+body {
+  color: var(--background);
+  background: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 145vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(27, 27, 29, 0.578), rgba(37, 32, 15, 0)), url(/images/background1.jpg);
+  background-position: center;
+  background-size: cover;
+  padding: 0 17px 0 17px;
+}
+
+.page-width {
+  z-index: 6;
+  position: sticky;
+}
+
+.header {
+  padding: 20px;
+  align-items: center;
+  display: flex;
+  position: static;
+  color: #ffffff;
+}
+
+.logo {
+  margin-right: 30px;
+  flex: 0 0 160px;
+}
+
+.btnHeader {
+  margin: 0 20px;
+  font-size: 18px;
+  position: relative;
+  color: #ffffff;
+}
+
+.btnHeader:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: -5px;
+  height: 2px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.btnHeader:hover:after {
+  background-color: #fff;
+}
+
+.botons {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.icons {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1 1 auto;
+}
+
+.bi {
+  height: 23px;
+  width: 23px;
+  color: #ffffff;
+}
+
+.btnIcon {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.painel {
+  z-index: 5;
+  position: relative;
+  color: white;
+  margin: 100px 25px;
+  right: 0;
+  top: 0;
+
+  .text {
+    vertical-align: bottom;
+    text-align: left;
+    display: table-cell;
+    max-width: 500px;
+    text-shadow: 0 3px 7px rgb(0, 0, 0, .15);
+    background: radial-gradient(rgba(0, 0, 0, .3) 0%, transparent 60%);
+
+    h1 {
+      font-size: 90px;
+      font-weight: 700;
+      font-family: "ITC New Baskerville", serif;
+      letter-spacing: 0.025em;
+      line-height: 1.5;
+      text-rendering: optimizeSpeed;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.3em;
+      display: block;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.btnShop {
+  background-color: white;
+  color: #000000;
+  font-size: large;
+  font-weight: 200;
+  margin: 10px;
+  padding: 10px 20px 10px 20px;
+  border-radius: 5px;
+}
+
+.produtos {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.ourProducts {
+  background-color: #ffffff;
+  padding: 30px 17px 30px 17px;
+  color: #42434d;
+}
+
+.subTitulo {
+  font-family: "ITC New Baskerville", serif;
+  font-size: 35px;
+}
+
+.milk {
+  border: rgba(37, 37, 37, 0.1) 2px;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 10px;
+}
+
+.milk::after {
+  content: '';
+  /* Garante que o pseudo-elemento apareça */
+  display: block;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
+.milk:hover {
+  transform: scale(1.1);
+  border-style: inset;
+  border-bottom: #5a57574b;
+}
+
+.milk:hover::after {
+  opacity: 0.3;
+  /* Torna o pseudo-elemento visível */
+  width: 100%;
+  /* Ajuste o tamanho de acordo com o elemento pai */
+  height: 100%;
+}
+
+.panel3 {
+  display: flex;
+  background-color: #d3dac9;
+  justify-items: center;
+}
+
+.panel3Text {
+  flex: 1 1 auto;
+  max-width: 40%;
+  vertical-align: bottom;
+  position: relative;
+
+  margin: 100px 25px;
+  right: 0;
+  top: 0;
+
+  h2 {
+    font-family: "ITC New Baskerville", serif;
+    font-size: 54px;
+    color: #2d2e31f2;
+    font-weight: 400;
+    margin-bottom: 15px;
+    letter-spacing: 0.025em;
+    line-height: 1.2;
+  }
+
+  p {
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.3em;
+    display: block;
+    margin-bottom: 15px;
+    text-rendering: optimizeSpeed;
+    letter-spacing: 0.025em;
+    line-height: 1.5;
+  }
+}
+
+.moolaSimple {
+  display: flex;
+  animation: none;
+  opacity: 1;
+  transform: scale(1);
+  transition: transform .7s cubic-bezier(.13, .55, .25, 1);
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.painel4 {
+  margin-top: 20px;
+
+  .text {
+    h1 {
+      font-family: "ITC New Baskerville", serif;
+      font-size: 42px;
+      color: #2d2e31f2;
+      font-weight: 400;
+      letter-spacing: 0.025em;
+      line-height: 1.2;
+      margin-bottom: 40px;
+      text-align: center;
+      text-rendering: optimizeSpeed;
+    }
+  }
+}
+
+.gridMarcas {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px;
+  word-break: break-word;
+  justify-content: center;
+}
+
+.marcas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 25px 30px;
+  position: relative;
+  width: 100%;
+}
+
+.organic {
+  margin-top: 50px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+
+.panel5 {
+  display: flex;
+  background-color: #d3dac9;
+  justify-items: center;
+}
+
+.panel5Text {
+  flex: 1 1 auto;
+  max-width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 100px 25px;
+  right: 0;
+  top: 0;
+
+  h2 {
+    font-family: "ITC New Baskerville", serif;
+    font-size: 30px;
+    color: #2d2e31f2;
+    font-weight: 400;
+    margin-bottom: 15px;
+    letter-spacing: 0.025em;
+    line-height: 1.2;
+  }
+
+  p {
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.9em;
+    display: block;
+    margin-bottom: 15px;
+    text-rendering: optimizeSpeed;
+    letter-spacing: 0.025em;
+    line-height: 1.5;
+  }
+}
+
+.painel6 {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #42434d25;
+
+  .text {
+    h1 {
+      font-family: "ITC New Baskerville", serif;
+      font-size: 42px;
+      color: #2d2e31f2;
+      font-weight: 400;
+      letter-spacing: 0.025em;
+      line-height: 1.2;
+      margin-bottom: 40px;
+      text-align: center;
+      text-rendering: optimizeSpeed;
+    }
+  }
+}
+
+.carousel-container {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 90%;
+}
+
+.testimonial-card {
+  text-align: center;
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  height: 250px;
+}
+
+.slick-slide {
+  opacity: 0.7;
+  /* Torna os cards laterais menos opacos */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.stars {
+  font-size: 20px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.testimonial-text {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #333;
+}
+
+.author-info {
+  margin-top: 20px;
+}
+
+.author-name,
+.author-location {
+  font-size: 14px;
+  color: #666;
+}
+
+.panel7 {
+  display: flex;
+  background-color: #d3dac9;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 40px;
+}
+
+.panel7Text {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 25px 25px;
+  right: 0;
+  top: 0;
+
+  h2 {
+    font-family: "ITC New Baskerville", serif;
+    font-size: 40px;
+    color: #2d2e31f2;
+    font-weight: 400;
+    margin-bottom: 15px;
+    letter-spacing: 0.025em;
+    line-height: 1.2;
+  }
+
+  p {
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.1em;
+    display: block;
+    margin-bottom: 15px;
+    text-rendering: optimizeSpeed;
+    letter-spacing: 0.025em;
+    line-height: 1.5;
+  }
+}
+
+.panel7Email {
+  input {
+    border-radius: 0;
+    flex: 1 1 auto;
+    margin: 0;
+    min-width: 0;
+    border: 1px solid #fff;
+    padding: 8px 10px;
+  }
+
+  input:focus-visible {
+    border-color: #000000;
+    outline: none;
+  }
+
+  input::placeholder {
+    color: #42434d;
+    opacity: 1;
+  }
+
+  button {
+    padding: 5px 25px 5px 25px;
+    justify-content: center;
+    align-content: center;
+    color: #fff;
+    background-color: #313652;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    border: 1px solid transparent;
+    text-align: center;
+  }
+}
+
+.panel8 {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background-image: url(/images/background3.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.panel8Text {
+  background-color: #fff;
+  border-radius: 20px;
+  margin: 55px 0px 20px 50px;
+  font-size: 1.1em;
+  overflow: hidden;
+  padding: 30px;
+  text-align: left;
+  width: 380px;
+  color: #42434d;
+
+  h2 {
+    font-family: "ITC New Baskerville", serif;
+    font-size: 40px;
+    color: #2d2e31f2;
+    font-weight: 400;
+    margin: 0 0 20px;
+    letter-spacing: 0.025em;
+    line-height: 1.2;
+  }
+  p{
+    font-size: 13px;
+  }
+  button{
+    padding: 5px 25px 5px 25px;
+    justify-content: center;
+    align-content: center;
+    color: #fff;
+    background-color: #313652;
+    font-family: "ITC New Baskerville", serif;
+    font-weight: 700;
+    cursor: pointer;
+    border: 1px solid transparent;
+    text-align: center;
+  }
+}
